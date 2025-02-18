@@ -1,6 +1,6 @@
 'use client'
 import React, { MouseEventHandler, ReactNode, useState } from 'react';
-import { Mail, MessageSquare, MapPin, Calendar, Send, Linkedin, Instagram, Globe, Tablet, WebcamIcon } from 'lucide-react';
+import { Mail, MessageSquare, MapPin, Calendar, Send, Linkedin, Instagram, Globe, Tablet, WebcamIcon, MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -107,7 +107,7 @@ const DigitalBusinessCard = () => {
           <ActionButton icon={<Calendar size={24} />} label="Calendar" click={scheduleCalendarMeeting} />
           <ActionButton icon={<MapPin size={24} />} label="Location" click={openLocation} />
           {/* <ActionButton icon={<WebcamIcon size={24} />} label="Skype" link='' /> */}
-          <ActionButton icon={<MessageSquare size={24} />} label="Messenger" link='https://m.me/' />
+          <ActionButton icon={<MessageCircle size={24} />} label="Messenger" link='https://m.me/' />
         </div>
 
         {/* Social Links */}
