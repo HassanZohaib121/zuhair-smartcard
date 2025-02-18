@@ -1,6 +1,6 @@
 'use client'
-import React, { ReactNode, useState } from 'react';
-import { Phone, Mail, MessageSquare, MapPin, Calendar, Send, Linkedin, Instagram, Globe } from 'lucide-react';
+import React, { MouseEventHandler, ReactNode, useState } from 'react';
+import { Mail, MessageSquare, MapPin, Calendar, Send, Linkedin, Instagram, Globe, Tablet, WebcamIcon } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ const DigitalBusinessCard = () => {
     const [isSaving, setIsSaving] = useState<boolean>(false)
     const title = encodeURIComponent("Meeting with Zuhair bin Redha")
     const details = encodeURIComponent("Meeting scheduled via Digital Business Card")
-    const location = encodeURIComponent("")
+    const location = encodeURIComponent("JAN-1 Building, Suite 4th Floor,Al Hisn Street, Bur Dubai,Dubai,U.A.E")
 
     const saveContact = async () => {
       setIsSaving(true)
@@ -19,10 +19,10 @@ const DigitalBusinessCard = () => {
         FN:Zuhair bin Redha
         TITLE:CEO
         ORG:Goldman Properties
+        TEL;TYPE=WORK,VOICE:+971542222033
         ADR:;;JAN-1 Building, Suite 4th Floor,Al Hisn Street, Bur Dubai;Dubai;;U.A.E
         END:VCARD`
         
-        // TEL;TYPE=WORK,VOICE:+923106025047
 
         // Create a Blob with the vCard content
         const blob = new Blob([vCardContent], { type: "text/vcard;charset=utf-8" })
@@ -54,15 +54,11 @@ const DigitalBusinessCard = () => {
     }
   
     const scheduleCalendarMeeting = () => {
-      const title = encodeURIComponent("Meeting with Hassan")
-      const details = encodeURIComponent("Meeting scheduled via Smart Card")
-      const location = encodeURIComponent("Sargodha, Punjab, Pakistan")
       window.open(`https://calendar.google.com/calendar/u/0/r/eventedit?text=${title}&details=${details}&location=${location}`)
     }
   
     const openLocation = () => {
-      const address = encodeURIComponent("Sargodha, Punjab, Pakistan")
-      window.open(`https://www.google.com/maps/search/?api=1&query=${address}`)
+      window.open(`https://www.google.com/maps/search/?api=1&query=${location}`)
     }
   return (
     <div className="max-w-sm mx-auto min-h-screen">
@@ -73,7 +69,7 @@ const DigitalBusinessCard = () => {
         <div className="flex justify-between mb-8">
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 border-1">
-                <Image src="/Goldman-Properties.png" alt='Goldman Properties Logo' className='' width={50} height={50} />
+                <Image src="./Goldman-Properties.png" alt='Goldman Properties Logo' className='' width={50} height={50} />
             </div>
             <span className="text-sm text-white">Goldman Properties</span>
           </div>
@@ -86,7 +82,7 @@ const DigitalBusinessCard = () => {
         {/* Profile Section */}
         <div className="text-center">
           <div className="w-24 h-24 mx-auto rounded-full border border-1 border-black mb-4">
-            <Image src='/' width={200} height={200} alt='zuhair bin redha' className='rounded-full' />
+            <Image src='./' width={200} height={200} alt='zuhair bin redha' className='rounded-full' />
             </div>
           <h2 className="text-xl font-semibold mb-1 text-white">Zuhair bin Redha</h2>
           <p className="text-sm text-gray-100 mb-4">CEO</p>
@@ -97,21 +93,21 @@ const DigitalBusinessCard = () => {
       {/* White Section */}
       <div className="bg-white px-6 pt-6 pb-8 -mt-8 rounded-t-3xl">
         {/* Save Contact Button */}
-        <button className="bg-blue-600 text-white rounded-full px-6 py-2 text-sm w-full mb-8">
+        <button onClick={saveContact} className="bg-blue-600 text-white rounded-full px-6 py-2 text-sm w-full mb-8">
           Save Contact
         </button>
 
         {/* Action Grid */}
         <div className="grid grid-cols-3 gap-6 mb-8">      
-          <ActionButton icon={<Phone size={24} />} label="Mobile" link='tel:+971542222033' />
+          <ActionButton icon={<Tablet size={24} />} label="Mobile" link='tel:+971542222033' />
           <ActionButton icon={<Mail size={24} />} label="Email" link='mailto:zuhair@goldman.ae' />
-          <ActionButton icon={<Phone size={24} />} label="Call" link='tel:' />
+          {/* <ActionButton icon={<Phone size={24} />} label="Call" link='tel:' /> */}
           <ActionButton icon={<Send size={24} />} label="SMS" link='sms:+971542222033' />
           <ActionButton icon={<MessageSquare size={24} />} label="WhatsApp" link='https://wa.me/' />
-          <ActionButton icon={<Calendar size={24} />} label="Calendar" link={`https://calendar.google.com/calendar/u/0/r/eventedit?text=${title}&details=${details}&location=${location}`} />
-          <ActionButton icon={<MapPin size={24} />} label="Location" link='' />
-          <ActionButton icon={<Phone size={24} />} label="Skype" link='' />
-          <ActionButton icon={<MessageSquare size={24} />} label="Messenger" link='' />
+          <ActionButton icon={<Calendar size={24} />} label="Calendar" click={scheduleCalendarMeeting} />
+          <ActionButton icon={<MapPin size={24} />} label="Location" click={openLocation} />
+          {/* <ActionButton icon={<WebcamIcon size={24} />} label="Skype" link='' /> */}
+          <ActionButton icon={<MessageSquare size={24} />} label="Messenger" link='https://m.me/' />
         </div>
 
         {/* Social Links */}
@@ -142,10 +138,10 @@ const DigitalBusinessCard = () => {
   );
 };
 
-const ActionButton = ({ icon, label, link }:{icon:ReactNode, label:string, link:string}) => {
+const ActionButton = ({ icon, label, link, click }:{icon:ReactNode, label:string, link?:string , click?:MouseEventHandler}) => {
   return (
-    <Link target='_blank' href={link}>
-    <div className="flex flex-col items-center gap-2 cursor-pointer">
+    <Link target='_blank' href={link || ''}>
+    <div className="flex flex-col items-center gap-2 cursor-pointer" onClick={click || undefined}>
       <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-600">
         {icon}
       </div>
