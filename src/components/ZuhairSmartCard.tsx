@@ -1,8 +1,10 @@
 'use client'
 import React, { MouseEventHandler, ReactNode, useState } from 'react';
-import { Mail, MessageSquare, MapPin, Calendar, Send, Linkedin, Instagram, Globe, Tablet, WebcamIcon, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Calendar, Send, Linkedin, Instagram, Globe, Tablet } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+
+
 
 const DigitalBusinessCard = () => {
     const [isSaving, setIsSaving] = useState<boolean>(false)
@@ -61,7 +63,7 @@ const DigitalBusinessCard = () => {
       window.open(`https://www.google.com/maps/search/?api=1&query=${location}`)
     }
   return (
-    <div className="max-w-sm mx-auto min-h-screen">
+    <div className="max-w-sm mx-auto min-h-screen bg-blue-600">
       {/* Top Section with Blue Gradient */}
       <div className="bg-gradient-to-b from-blue-600 to-blue-500 pt-6 pb-16 px-6">
         {/* <div className='bg-gradient-to-b from-gray-900 to-slate-200'> */}
@@ -85,25 +87,25 @@ const DigitalBusinessCard = () => {
             <Image src='/zuhair.png' width={200} height={200} alt='zuhair bin redha' className='rounded-full' />
             </div>
           <h2 className="text-xl font-semibold mb-1 text-white">Zuhair bin Redha</h2>
-          <p className="text-sm text-gray-100 mb-4">CEO</p>
+          <p className="text-sm text-gray-100 mb-4">Chief Executive Officer</p>
           <p className="text-sm text-gray-100 mb-4">Goldman Properties</p>
         </div>
       </div>
 
       {/* White Section */}
-      <div className="bg-white px-6 pt-6 pb-8 -mt-8 rounded-t-3xl">
+      <div className="bg-white px-6 pt-8 pb-12 -mt-8 rounded-t-3xl rounded-b-3xl">
         {/* Save Contact Button */}
         <button onClick={saveContact} className="bg-blue-600 text-white rounded-full px-6 py-2 text-sm w-full mb-8">
           Save Contact
         </button>
 
         {/* Action Grid */}
-        <div className="grid grid-cols-3 gap-6 mb-8">      
+        <div className="grid grid-cols-3 gap-6 mb-10">      
           <ActionButton icon={<Tablet size={24} />} label="Mobile" link='tel:+971542222033' />
           <ActionButton icon={<Mail size={24} />} label="Email" link='mailto:zuhair@goldman.ae' />
           {/* <ActionButton icon={<Phone size={24} />} label="Call" link='tel:' /> */}
           <ActionButton icon={<Send size={24} />} label="SMS" link='sms:+971542222033' />
-          <ActionButton icon={<MessageCircle size={24} />} label="WhatsApp" link='https://wa.me/+971542222033' />
+          <ActionButton icon={<Image src="/whatsapp.svg" alt="WhatsApp" width={24} height={24} />} label="WhatsApp" link='https://wa.me/+971542222033' />
           <ActionButton icon={<Calendar size={24} />} label="Calendar" click={scheduleCalendarMeeting} />
           <ActionButton icon={<MapPin size={24} />} label="Location" click={openLocation} />
           {/* <ActionButton icon={<WebcamIcon size={24} />} label="Skype" link='' /> */}
@@ -133,6 +135,11 @@ const DigitalBusinessCard = () => {
         {/* <div className="text-center mt-8 text-xs text-gray-500">
           Powered By SMART CARD
         </div> */}
+      </div>
+      <div className='bg-gradient-to-b from-blue-600 to-blue-900 pt-6 pb-8 px-6'>
+        <h1 className='text-xl font-bold'>Portfolio</h1>
+        <p className="text-center mt-4 text-sm text-white">As the CEO of Goldman Properties, I lead one of the UAE's most prestigious real estate firms, established in 1971. With over five decades of excellence, we have built a legacy of innovation, integrity, and unmatched expertise in the real estate industry. My leadership is driven by a vision to shape the future of real estate through sustainable development, cutting-edge design, and customer-centric solutions.</p>
+        <p className="text-center mt-8 text-sm text-white">Goldman Properties is committed to delivering world-class real estate solutions, and I am honored to lead this journey towards excellence.</p>
       </div>
     </div>
   );
