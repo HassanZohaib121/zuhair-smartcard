@@ -83,7 +83,7 @@ const DigitalBusinessCard = () => {
 
         {/* Profile Section */}
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto rounded-full border border-1 border-black mb-4">
+          <div className="w-24 h-24 mx-auto rounded-full mb-4">
             <Image src='./zuhair.png' width={200} height={200} alt='zuhair bin redha' className='rounded-full' />
             </div>
           <h2 className="text-xl font-semibold mb-1 text-white">Zuhair bin Redha</h2>
