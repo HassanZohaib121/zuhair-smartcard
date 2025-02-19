@@ -82,7 +82,7 @@ const DigitalBusinessCard = () => {
         {/* Profile Section */}
         <div className="text-center">
           <div className="w-24 h-24 mx-auto rounded-full border border-1 border-black mb-4">
-            <Image src='./' width={200} height={200} alt='zuhair bin redha' className='rounded-full' />
+            <Image src='/zuhair.png' width={200} height={200} alt='zuhair bin redha' className='rounded-full' />
             </div>
           <h2 className="text-xl font-semibold mb-1 text-white">Zuhair bin Redha</h2>
           <p className="text-sm text-gray-100 mb-4">CEO</p>
@@ -103,11 +103,11 @@ const DigitalBusinessCard = () => {
           <ActionButton icon={<Mail size={24} />} label="Email" link='mailto:zuhair@goldman.ae' />
           {/* <ActionButton icon={<Phone size={24} />} label="Call" link='tel:' /> */}
           <ActionButton icon={<Send size={24} />} label="SMS" link='sms:+971542222033' />
-          <ActionButton icon={<MessageSquare size={24} />} label="WhatsApp" link='https://wa.me/' />
+          <ActionButton icon={<MessageCircle size={24} />} label="WhatsApp" link='https://wa.me/+971542222033' />
           <ActionButton icon={<Calendar size={24} />} label="Calendar" click={scheduleCalendarMeeting} />
           <ActionButton icon={<MapPin size={24} />} label="Location" click={openLocation} />
           {/* <ActionButton icon={<WebcamIcon size={24} />} label="Skype" link='' /> */}
-          <ActionButton icon={<MessageCircle size={24} />} label="Messenger" link='https://m.me/' />
+          {/* <ActionButton icon={<MessageCircle size={24} />} label="Messenger" link='https://m.me/' /> */}
         </div>
 
         {/* Social Links */}
