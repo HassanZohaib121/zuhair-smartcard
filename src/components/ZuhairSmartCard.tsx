@@ -7,53 +7,53 @@ import Link from 'next/link';
 
 
 const DigitalBusinessCard = () => {
-    const [isSaving, setIsSaving] = useState<boolean>(false)
+    // const [isSaving, setIsSaving] = useState<boolean>(false)
     const title = encodeURIComponent("Meeting with Zuhair bin Redha")
     const details = encodeURIComponent("Meeting scheduled via Digital Business Card")
     const location = encodeURIComponent("JAN-1 Building, Suite 4th Floor,Al Hisn Street, Bur Dubai,Dubai,U.A.E")
 
-    const saveContact = async () => {
-      setIsSaving(true)
-      try {
-        // Create vCard content
-        const vCardContent = `BEGIN:VCARD
-        VERSION:3.0
-        FN:Zuhair bin Redha
-        TITLE:CEO
-        ORG:Goldman Properties
-        TEL;TYPE=WORK,VOICE:+971542222033
-        ADR:;;JAN-1 Building, Suite 4th Floor,Al Hisn Street, Bur Dubai;Dubai;;U.A.E
-        END:VCARD`
+    // const saveContact = async () => {
+    //   setIsSaving(true)
+    //   try {
+    //     // Create vCard content
+    //     const vCardContent = `BEGIN:VCARD
+    //     VERSION:3.0
+    //     FN:Zuhair bin Redha
+    //     TITLE:CEO
+    //     ORG:Goldman Properties
+    //     TEL;TYPE=WORK,VOICE:+971542222033
+    //     ADR:;;JAN-1 Building, Suite 4th Floor,Al Hisn Street, Bur Dubai;Dubai;;U.A.E
+    //     END:VCARD`
         
 
-        // Create a Blob with the vCard content
-        const blob = new Blob([vCardContent], { type: "text/vcard;charset=utf-8" })
+    //     // Create a Blob with the vCard content
+    //     const blob = new Blob([vCardContent], { type: "text/vcard;charset=utf-8" })
   
-        // Create a download link
-        const link = document.createElement("a")
-        link.href = URL.createObjectURL(blob)
-        link.download = "Zuhair bin Redha.vcf"
+    //     // Create a download link
+    //     const link = document.createElement("a")
+    //     link.href = URL.createObjectURL(blob)
+    //     link.download = "Zuhair bin Redha.vcf"
   
-        // Append the link to the body, click it, and remove it
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+    //     // Append the link to the body, click it, and remove it
+    //     document.body.appendChild(link)
+    //     link.click()
+    //     document.body.removeChild(link)
   
-        // toast({
-        //   title: "Contact Saved",
-        //   description: "The contact information has been downloaded as a vCard file.",
-        // })
-      } catch (error) {
-        console.error("Error saving contact:", error)
-        // toast({
-        //   title: "Error",
-        //   description: "Failed to save contact information. Please try again.",
-        //   variant: "destructive",
-        // })
-      } finally {
-        setIsSaving(false)
-      }
-    }
+    //     // toast({
+    //     //   title: "Contact Saved",
+    //     //   description: "The contact information has been downloaded as a vCard file.",
+    //     // })
+    //   } catch (error) {
+    //     console.error("Error saving contact:", error)
+    //     // toast({
+    //     //   title: "Error",
+    //     //   description: "Failed to save contact information. Please try again.",
+    //     //   variant: "destructive",
+    //     // })
+    //   } finally {
+    //     setIsSaving(false)
+    //   }
+    // }
   
     const scheduleCalendarMeeting = () => {
       window.open(`https://calendar.google.com/calendar/u/0/r/eventedit?text=${title}&details=${details}&location=${location}`)
@@ -95,9 +95,11 @@ const DigitalBusinessCard = () => {
       {/* White Section */}
       <div className="bg-white px-6 pt-8 pb-12 -mt-8 rounded-t-3xl rounded-b-3xl">
         {/* Save Contact Button */}
-        <button onClick={saveContact} className="bg-blue-600 text-white rounded-full px-6 py-2 text-sm w-full mb-8">
+        <Link href="tel:+971542222033">
+        <button className="bg-blue-600 text-white rounded-full px-6 py-2 text-sm w-full mb-8">
           Save Contact
         </button>
+        </Link>
 
         {/* Action Grid */}
         <div className="grid grid-cols-3 gap-6 mb-10">      
