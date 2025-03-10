@@ -22,6 +22,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
 import { CustomCursor } from "./CustomerCursor"
+import { useMobile } from "@/hooks/use-mobile"
 
 
 const ThemeToggle = () => {
@@ -54,6 +55,7 @@ const DigitalBusinessCard = () => {
   const details = encodeURIComponent("Meeting scheduled via Digital Business Card")
   const location = encodeURIComponent("JAN-1 Building, Suite 4th Floor,Al Hisn Street, Bur Dubai,Dubai,U.A.E")
   const [showPortfolio, setShowPortfolio] = useState(false)
+  const isMobile = useMobile()
 
   const scheduleCalendarMeeting = () => {
     window.open(
@@ -71,7 +73,7 @@ const DigitalBusinessCard = () => {
 
   return (
     <>
-      <CustomCursor />
+      {!isMobile || window.innerWidth <= 768 && <CustomCursor />}
       <div className="max-w-md mx-auto min-h-screen bg-gradient-to-b from-primary via-primary/90 to-primary relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
