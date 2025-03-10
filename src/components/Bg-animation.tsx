@@ -9,7 +9,7 @@ export default function BgAnimation() {
     <div className="area">
       <ul className="circles">
         {Array.from({ length: 14 }).map((_, i) => (
-          <li className={"bg-primary"} key={i}></li>
+          <li className="bg-primary" key={i}></li>
         ))}
       </ul>
     </div>
