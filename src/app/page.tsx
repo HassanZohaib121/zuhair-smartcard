@@ -1,5 +1,5 @@
-import DigitalBusinessCard from "@/components/ZuhairSmartCard";
-import Image from "next/image";
+import DigitalBusinessCard from "@/components/digital-business-card";
+
 
 export default function Home() {
   return (

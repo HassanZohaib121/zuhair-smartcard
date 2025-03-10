@@ -1,6 +1,6 @@
 // 'use client';
 
-import { Contacts } from "@capacitor-community/contacts"
+// import { Contacts } from "@capacitor-community/contacts"
 
 
 // type Contact = {
