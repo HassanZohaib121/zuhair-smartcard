@@ -22,6 +22,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
 import { CustomCursor } from "./CustomerCursor"
+import whatsapp from "./whatsapp.svg"
 
 const ThemeToggle = () => {
   const { theme, setTheme } = useTheme()
@@ -151,7 +152,7 @@ const DigitalBusinessCard = () => {
               <ActionButton icon={<Mail size={24} />} label="Email" link="mailto:zuhair@goldman.ae" />
               <ActionButton icon={<Send size={24} />} label="SMS" link="sms:+971542222033" />
               <ActionButton
-                icon={<Image src="./whatsapp.svg" alt="WhatsApp" width={24} height={24} />}
+                icon={<Image src={whatsapp} alt="WhatsApp" width={24} height={24} />}
                 label="WhatsApp"
                 link="https://wa.me/+971542222033"
               />
