@@ -160,11 +160,11 @@ const DigitalBusinessCard = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="flex items-center align-middle gap-2"
               >
-                <div className="w-12 h-12 border-2 border-primary-foreground/30 rounded-full overflow-hidden shadow-lg">
+                 <div className="w-12 h-12 border-2 border-primary-foreground/30 rounded-full overflow-hidden shadow-lg bg-white flex items-center justify-center">
                   <Image
                     src="/Goldman-Properties.png"
                     alt="Goldman Properties Logo"
-                    className="w-full h-full object-cover"
+                    className="w-10 h-10 object-contain"
                     width={50}
                     height={50}
                   />
