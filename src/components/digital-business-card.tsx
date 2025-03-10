@@ -90,7 +90,7 @@ const DigitalBusinessCard = () => {
               >
                  <div className="w-12 h-12 border-2 border-primary-foreground/30 rounded-full overflow-hidden shadow-lg bg-white flex items-center justify-center">
                   <Image
-                    src="./zuhair-smartcard/Goldman-Properties.png"
+                    src="/zuhair-smartcard/Goldman-Properties.png"
                     alt="Goldman Properties Logo"
                     className="w-10 h-10 object-contain"
                     width={50}
