@@ -51,11 +51,12 @@ const WhatsAppIcon = ({ size = 24 }: { size?: number }) => {
 }
 
 const DigitalBusinessCard = () => {
+  const [showPortfolio, setShowPortfolio] = useState(false)
+  const isMobile = useMobile()
+
   const title = encodeURIComponent("Meeting with Zuhair Bin Redha")
   const details = encodeURIComponent("Meeting scheduled via Digital Business Card")
   const location = encodeURIComponent("JAN-1 Building, Suite 4th Floor,Al Hisn Street, Bur Dubai,Dubai,U.A.E")
-  const [showPortfolio, setShowPortfolio] = useState(false)
-  const isMobile = useMobile()
 
   const scheduleCalendarMeeting = () => {
     window.open(
@@ -64,7 +65,8 @@ const DigitalBusinessCard = () => {
   }
 
   const openLocation = () => {
-    window.open(`https://www.google.com/maps/search/?api=1&query=${location}`)
+    // window.open(`https://www.google.com/maps/search/?api=1&query=${location}`)
+    window.open(`https://www.google.com/maps/place/JAN-1+Building/@25.2613783,55.2941546,17z/data=!4m14!1m7!3m6!1s0x3e5f43934a173b9d:0xbdb41a14e5e45012!2sJAN-1+Building!8m2!3d25.2620091!4d55.295603!16s%2Fg%2F11mgq7d9qz!3m5!1s0x3e5f43934a173b9d:0xbdb41a14e5e45012!8m2!3d25.2620091!4d55.295603!16s%2Fg%2F11mgq7d9qz?entry=ttu&g_ep=EgoyMDI1MDMwNC4wIKXMDSoASAFQAw%3D%3D`, "_blank")
   }
 
   const togglePortfolio = () => {
