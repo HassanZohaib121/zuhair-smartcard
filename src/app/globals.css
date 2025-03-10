@@ -4,8 +4,6 @@
 
 /* bg-gradient-to-b from-gray-900 to-slate-200 */
 
-
-
 /* @layer base {
   :root {
 
@@ -169,6 +167,15 @@
   }
 }
 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
 /************************ 21.Background effect css ***************************/
 .area {
 	width: 100%;
@@ -194,7 +201,8 @@
 	list-style: none;
 	width: 20px;
 	height: 20px;
-	background: rgb(255 22 22 / 10%);
+	/* background: rgb(255 22 22 / 10%); */
+	/* background: rgb(255 22 22 / 10%); */
 	animation: animate 25s linear infinite;
 	bottom: -150px;
 }
@@ -289,12 +297,68 @@
 	}
 }
 
-
-@layer base {
-  * {
-    @apply border-border;
+/* 
+@layer utilities {
+  .animate-float {
+    animation: float 25s linear infinite;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .animate-float-slow {
+    animation: float 35s linear infinite;
+  }
+
+  .animate-float-slower {
+    animation: float 45s linear infinite;
+  }
+
+  .animate-float-medium {
+    animation: float 18s linear infinite;
+  }
+
+  .animate-float-fast {
+    animation: float 12s linear infinite;
+  }
+
+  .animate-float-faster {
+    animation: float 11s linear infinite;
+  }
+
+  .delay-0 {
+    animation-delay: 0s;
+  }
+
+  .delay-2 {
+    animation-delay: 2s;
+  }
+
+  .delay-3 {
+    animation-delay: 3s;
+  }
+
+  .delay-4 {
+    animation-delay: 4s;
+  }
+
+  .delay-7 {
+    animation-delay: 7s;
+  }
+
+  .delay-15 {
+    animation-delay: 15s;
   }
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+ */

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import BgAnimation from "@/components/Bg-animation";
+// import { FloatingCircles } from "@/components/floating-circles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <BgAnimation />
+        {/* <FloatingCircles /> */}
       </body>
     </html>
   );
