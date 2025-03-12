@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   output: "export",
-  basePath: "/zuhair-smartcard",
+  basePath: "/zuhair-smartcard", // for github-pages
   eslint: {
     ignoreDuringBuilds: true,
   },

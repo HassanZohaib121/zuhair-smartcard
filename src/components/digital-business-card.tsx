@@ -125,11 +125,12 @@ const DigitalBusinessCard = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="flex items-center align-middle gap-2"
               >
-                 <div className="w-12 h-12 border-2 border-primary-foreground/30 rounded-full overflow-hidden shadow-lg bg-white flex items-center justify-center">
+                 <div className="w-12 h-12 border-2 border-primary-foreground/30 rounded-full overflow-hidden shadow-lg bg-[#1C1C1C] flex items-center justify-center">
                   <Image
-                    src="./Goldman-Properties.png"
-                    alt="Goldman Properties Logo"
+                    src="./Goldman.png"
+                    alt="Goldman Group Logo"
                     className="w-10 h-10 object-contain"
+                    // placeholder="blur"
                     width={50}
                     height={50}
                   />
@@ -151,6 +152,7 @@ const DigitalBusinessCard = () => {
                   width={200}
                   height={200}
                   alt="Zuhair Bin Redha"
+                  // placeholder="blur"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -158,7 +160,7 @@ const DigitalBusinessCard = () => {
               <p className="text-sm text-primary-foreground/80 mb-2">
                 Visionary CEO | Expert Engineer | Real Estate Leader
               </p>
-              <p className="text-sm font-semibold text-primary-foreground mb-4">Goldman Properties</p>
+              <p className="text-sm font-semibold text-primary-foreground mb-4">Goldman Group</p>
             </motion.div>
           </motion.div>
 
@@ -207,9 +209,46 @@ const DigitalBusinessCard = () => {
               <SocialButton
                 href="https://www.instagram.com/zuhair.binredha?igsh=MW9ua2tvbWl5cndubA=="
                 icon={<Instagram />}
-                variant="secondary"
+                variant="primary"
               />
-              <SocialButton href="http://goldmanproperties.ae" icon={<Globe />} variant="accent" />
+              <SocialButton href="http://goldman.ae" icon={<Globe />} variant="primary" />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className="flex justify-center gap-4 mt-6"
+            >
+              <Link href='https://goldmanproperties.ae/' 
+                className="w-20 h-20 border-primary-foreground/30 dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
+                <Image 
+                  src="./Goldman-Properties.png" 
+                  width={50} 
+                  height={50} 
+                  alt="Goldman Properties Logo" 
+                  className="w-18 h-20 bg-secondary dark:bg-white object-contain cursor-pointer" 
+                />
+              </Link>
+              <Link href='https://arabarch.ae/' 
+                className="w-20 h-20 border-primary-foreground/30 dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
+                <Image 
+                  src="./ArabArch.png" 
+                  width={50} 
+                  height={50} 
+                  alt="ArabArch Logo" 
+                  className="w-28 h-10 bg-secondary dark:bg-white object-contain cursor-pointer" 
+                />
+              </Link>
+              <Link href='https://goldman.ae/al-fahidi-services/' 
+                className="w-20 h-20 border-primary-foreground/30 dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
+                <Image 
+                  src="./alfahidi.png" 
+                  width={50} 
+                  height={50} 
+                  alt="Alfahidi Logo"
+                  className="w-28 h-10 bg-secondary dark:bg-white object-contain cursor-pointer" 
+                />
+              </Link>
             </motion.div>
           </motion.div>
 

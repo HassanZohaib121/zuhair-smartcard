@@ -4,8 +4,6 @@ import { Mail, MapPin, Calendar, Send, Linkedin, Instagram, Globe, Tablet, Conta
 import Image from 'next/image';
 import Link from 'next/link';
 
-
-
 const DigitalBusinessCard = () => {
     // const [isSaving, setIsSaving] = useState<boolean>(false)
     const title = encodeURIComponent("Meeting with Zuhair Bin Redha")

@@ -59,15 +59,15 @@ export const CustomCursor = () => {
         <div
           ref={cursorRef}
           className={cn(
-            "fixed pointer-events-none z-50 h-8 w-8 rounded-full border border-primary bg-background/80 opacity-0 backdrop-blur transition-all duration-300 ease-out",
+            "fixed pointer-events-none z-50 h-8 w-8 rounded-full border border-primary dark:border-white bg-background/80 opacity-0 backdrop-blur transition-all duration-300 ease-out",
             "mix-blend-difference",
             isPointer ? "scale-150" : "",
-            "opacity-100",
+            "opacity-100 ",
           )}
         />
         <div
           ref={cursorDotRef}
-          className="fixed pointer-events-none z-50 h-1 w-1 rounded-full bg-primary opacity-0 transition-opacity duration-300 opacity-100"
+          className="fixed pointer-events-none z-50 h-1 w-1 rounded-full bg-primary dark:bg-white transition-opacity duration-300 opacity-100"
         />
       </>
     )
