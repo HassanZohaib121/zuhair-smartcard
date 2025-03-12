@@ -146,14 +146,14 @@ const DigitalBusinessCard = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-center"
             >
-              <div className="w-28 h-28 mx-auto rounded-full bg-white dark:bg-white mb-4 border-4 border-primary-foreground/30 overflow-hidden shadow-xl">
+              <div className="w-28 h-28 mx-auto rounded-full mb-4 border-4 border-primary-foreground/30 overflow-hidden shadow-xl">
                 <Image
                   src="./zuhair.png"
                   width={200}
                   height={200}
                   alt="Zuhair Bin Redha"
                   // placeholder="blur"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full bg-white dark:bg-white object-cover"
                 />
               </div>
               <h2 className="text-2xl font-bold mb-1 text-primary-foreground">Zuhair Bin Redha</h2>
