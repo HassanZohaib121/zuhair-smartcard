@@ -146,7 +146,7 @@ const DigitalBusinessCard = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-center"
             >
-              <div className="w-28 h-28 mx-auto rounded-full mb-4 border-4 border-primary-foreground/30 overflow-hidden shadow-xl">
+              <div className="w-28 h-28 mx-auto rounded-full bg-white dark:bg-white mb-4 border-4 border-primary-foreground/30 overflow-hidden shadow-xl">
                 <Image
                   src="./zuhair.png"
                   width={200}
@@ -212,44 +212,7 @@ const DigitalBusinessCard = () => {
                 variant="primary"
               />
               <SocialButton href="http://goldman.ae" icon={<Globe />} variant="primary" />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              className="flex justify-center gap-4 mt-6"
-            >
-              <Link href='https://goldmanproperties.ae/' 
-                className="w-20 h-20 border-primary-foreground/30 dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
-                <Image 
-                  src="./Goldman-Properties.png" 
-                  width={50} 
-                  height={50} 
-                  alt="Goldman Properties Logo" 
-                  className="w-18 h-20 bg-secondary dark:bg-white object-contain cursor-pointer" 
-                />
-              </Link>
-              <Link href='https://arabarch.ae/' 
-                className="w-20 h-20 border-primary-foreground/30 dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
-                <Image 
-                  src="./ArabArch.png" 
-                  width={50} 
-                  height={50} 
-                  alt="ArabArch Logo" 
-                  className="w-28 h-10 bg-secondary dark:bg-white object-contain cursor-pointer" 
-                />
-              </Link>
-              <Link href='https://goldman.ae/al-fahidi-services/' 
-                className="w-20 h-20 border-primary-foreground/30 dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
-                <Image 
-                  src="./alfahidi.png" 
-                  width={50} 
-                  height={50} 
-                  alt="Alfahidi Logo"
-                  className="w-28 h-10 bg-secondary dark:bg-white object-contain cursor-pointer" 
-                />
-              </Link>
-            </motion.div>
+            </motion.div>            
           </motion.div>
 
           {/* Portfolio Toggle Button */}
@@ -316,6 +279,45 @@ const DigitalBusinessCard = () => {
               </CardContent>
             </Card>
           </motion.div>
+
+          {/* Logos */}
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.0 }}
+              className="flex justify-center gap-4 mt-6"
+            >
+              <Link href='https://goldmanproperties.ae/' 
+                className="w-20 h-20 border-primary-foreground/30 bg-white dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
+                <Image 
+                  src="./Goldman-Properties.png" 
+                  width={50} 
+                  height={50} 
+                  alt="Goldman Properties Logo" 
+                  className="w-18 h-20 bg-secondary dark:bg-white object-contain cursor-pointer" 
+                />
+              </Link>
+              <Link href='https://arabarch.ae/' 
+                className="w-20 h-20 border-primary-foreground/30 bg-white dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
+                <Image 
+                  src="./ArabArch.png" 
+                  width={50} 
+                  height={50} 
+                  alt="ArabArch Logo" 
+                  className="w-28 h-10 bg-secondary dark:bg-white object-contain cursor-pointer" 
+                />
+              </Link>
+              <Link href='https://goldman.ae/al-fahidi-services/' 
+                className="w-20 h-20 border-primary-foreground/30 bg-white dark:bg-white border-black shadow-black rounded-full overflow-hidden shadow-lg flex items-center justify-center">
+                <Image 
+                  src="./alfahidi.png" 
+                  width={50} 
+                  height={50} 
+                  alt="Alfahidi Logo"
+                  className="w-28 h-10 bg-secondary dark:bg-white object-contain cursor-pointer" 
+                />
+              </Link>
+            </motion.div>
 
           {/* Footer */}
           <motion.div
